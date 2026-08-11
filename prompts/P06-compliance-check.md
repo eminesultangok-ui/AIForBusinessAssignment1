@@ -122,9 +122,17 @@ Analysts occasionally include advice-adjacent phrasing without realising the com
 ### v1.0 — Initial draft ✅ Current
 
 **Date:** 11 August 2026
+
+
 **Prompt:** `Review this draft client email and identify, as a bullet-point list, any statements that could be read as investment advice. Quote the line and explain why. This is not a sign-off.`
+
+
 **Output:** Correctly identified the one advice-adjacent sentence, quoted it exactly, and explained the regulatory concern.
+
+
 **Observed effect:** Reliable detection with no false positives — flagged the real issue, left neutral content unflagged.
+
+
 **Lesson learned:** Explicit review criteria (quote + justify) produce a compliance check that adds real value rather than a generic pass/fail.
 
 ---
