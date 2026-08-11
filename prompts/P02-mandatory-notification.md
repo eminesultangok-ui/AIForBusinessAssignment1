@@ -8,7 +8,7 @@
 
 **Status:** ✅ Tested and approved
 
-**Last updated:** August 2026
+**Last updated:** 11 August 2026
 
 ---
 
@@ -114,9 +114,17 @@ Near-identical drafting is repeated for every mandatory event — dividends, spl
 ### v1.0 — Initial draft
 
 **Date:** 11 August 2026
+
+
 **Prompt:** `Write a client notification email about corporate action event.`
+
+
 **Output:** Accurate, well-formatted notification; correctly excluded analyst name and tax advice. But bank name was mixed into event-data fields, and no confirmation that no client action was required.
+
+
 **Observed effect:** Output was constraint-compliant but incomplete — sender identity not separated, and Mandatory-event clients had no explicit "no action needed" confirmation.
+
+
 **Lesson learned:** A constraint-compliant output can still miss things the constraints didn't cover — sender needed its own field, and "no action required" needed to be explicit.
 
 ---
@@ -124,9 +132,17 @@ Near-identical drafting is repeated for every mandatory event — dividends, spl
 ### v1.1 — Added "no action required" statement and separated sender field ✅ Current
 
 **Date:** 11 August 2026
+
+
 **Change:** Separated bank name into a dedicated "Sender" field; added instruction to explicitly state no client action is required for Mandatory events; added a missing-data check before drafting.
+
+
 **Output:** "No action is required" now appears clearly in the notification. Sender name appears naturally in the closing line rather than as a distinct header.
+
+
 **Observed effect:** Client-facing clarity improved — the exact gap from v1.0 is now closed.
+
+
 **Lesson learned:** Instructing the model to separate a field changes tone and placement, but doesn't guarantee a fixed structural position unless a strict format is specified.
 
 ---
