@@ -37,8 +37,7 @@ required data: event data."
 Do not add an analyst name — sign the document only as "Corporate
 Actions Operations."
 
-Event Data:
-[Event Data]
+
 ```
 
 **Placeholders to fill:**
@@ -108,9 +107,17 @@ Client service team is unprepared for the surge of calls following a complex eve
 ### v1.0 — Initial draft
 
 **Date:** 11 August 2026
+
+
 **Prompt:** `Given this merger event data, generate 5 FAQ pairs... [contained a leftover, unrelated instruction copied from P08: "Using this daily processing log, extract each event and present it as a table..."]`
+
+
 **Output:** The 5 FAQ pairs were accurate and well-written. However, the model also generated an entirely fabricated "Daily Processing Log" table (client counts, status) that was never part of the input — the leftover P08 instruction caused it to invent data with no source.
+
+
 **Observed effect:** The core FAQ task worked, but the unrelated instruction produced hallucinated data alongside the correct output — a real risk, since the fabricated table looked plausible and could be mistaken for real processing data.
+
+
 **Lesson learned:** Leftover instructions from a different prompt don't just get ignored — the model will attempt to satisfy them, inventing data if none is provided. Every prompt needs to be checked for stray instructions that don't belong to its own task, not just for whether its main instruction works.
 
 ---
@@ -118,9 +125,17 @@ Client service team is unprepared for the surge of calls following a complex eve
 ### v1.1 — Removed leftover P08 instruction ✅ Current
 
 **Date:** 11 August 2026
+
+
 **Change:** Removed the unrelated daily-processing-log instruction mistakenly carried over from P08; prompt now contains only the FAQ generation task.
+
+
 **Output:** 5 accurate FAQ pairs, no fabricated data, correctly signed — matches the input event data exactly.
+
+
 **Observed effect:** Hallucinated table from v1.0 is gone entirely; output now contains only what was requested.
+
+
 **Lesson learned:** Removing the single stray instruction eliminated the hallucination — confirming it was caused by the leftover instruction, not a general model tendency to invent data.
 
 ---
