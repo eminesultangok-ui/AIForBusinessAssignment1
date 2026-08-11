@@ -123,9 +123,17 @@ Missed voluntary-action deadlines are a recurring client complaint source; remin
 ### v1.0 — Initial draft
 
 **Date:** 11 August 2026
+
+
 **Prompt:** `Write a reminder email for a voluntary event, asking for instruction, warning that rights will lapse if no response.`
+
+
 **Output:** Accurate and complete — correctly included the rights-lapse warning, terms, and call to action. However, the notification re-explained the full event terms in detail, almost identically to what P03 would have already sent, and the deadline was not visually emphasised (no bold formatting requested).
+
+
 **Observed effect:** The output functioned as a strong standalone notification, but not as a distinct "reminder" — it largely duplicated P03's content rather than serving its intended role of a brief, urgency-focused follow-up.
+
+
 **Lesson learned:** A reminder prompt needs to be explicitly instructed to be brief and to reference (not repeat) previously sent details, or the model defaults to producing a full notification again — the workflow's distinction between P03 (full notification) and P04 (reminder) needs to be enforced in the prompt, not assumed.
 
 ---
@@ -133,9 +141,17 @@ Missed voluntary-action deadlines are a recurring client complaint source; remin
 ### v1.1 — Shortened to a true reminder, referencing rather than repeating terms ✅ Current
 
 **Date:** 11 August 2026
+
+
 **Change:** Reduced word limit to 90 words; instructed model to reference (not repeat) event terms; required bolded deadline; framed as a reminder, not a first notification.
+
+
 **Output:** Shorter, urgency-focused reminder that referenced the original notification instead of restating terms, with the deadline bolded.
+
+
 **Observed effect:** P04 now reads as a genuine reminder rather than duplicating P03 — a clear, distinct role within the workflow.
+
+
 **Lesson learned:** The model defaults to a full notification unless told it's a follow-up — framing and structural instructions (reference, don't repeat; bold the deadline) were both necessary.
 
 ---
