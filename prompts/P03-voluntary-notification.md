@@ -9,7 +9,7 @@
 
 **Status:** ✅ Tested and approved
 
-**Last updated:** 11 August 2026
+**Last updated:** August 2026
 
 ---
 
