@@ -1,4 +1,3 @@
-# AIForBusinessAssignment1[root-README.md](https://github.com/user-attachments/files/30926470/root-README.md)
 # 📚 Prompt Library — Investment Banking Operations: Corporate Actions Processing
 
 > **Assessment 1 | Generative AI for Business**
