@@ -1,9 +1,17 @@
 # P09 · Complex event FAQ
 
 **Section:** 03 — Compliance & Reporting
+
+
 **Workflow step:** Step 3 of 4
+
+
 **Current version:** v1.1
+
+
 **Status:** ✅ Tested and approved
+
+
 **Last updated:** August 2026
 
 ---
