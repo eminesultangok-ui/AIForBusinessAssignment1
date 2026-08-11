@@ -1,8 +1,14 @@
 # 📚 Prompt Library — Investment Banking Operations: Corporate Actions Processing
 
 > **Assessment 1 | Generative AI for Business**
+>
+> 
 > Student: Emine Sultan Gok | Business Field: Investment Banking Operations — Corporate Actions Processing
+>
+> 
 > Model tested on: OpenAI GPT-4.1 Mini (via La Trobe Prompt Lab)
+>
+> 
 > Last updated: 11 August 2026
 
 ---
