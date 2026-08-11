@@ -41,13 +41,6 @@ Do not add an analyst name — sign the notification only as
 "Corporate Actions Team." Do not recommend whether the client should
 participate.
 
-Event feed entry:
-Sender Name: [Sender Name]
-Security Name: [Security Name]
-ISIN: [ISIN]
-Holding Shares Amount: [Holding Shares Amount]
-Deadline Date: [DEADLINE_DATE]
-Event Terms: [EVENT TERMS]
 ```
 
 **Placeholders to fill:**
