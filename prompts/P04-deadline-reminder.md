@@ -1,9 +1,13 @@
 # P04 · Deadline reminder
 
 **Section:** 02 — Deadline and Instruction Management
+
 **Workflow step:** Step 1 of 3
+
 **Current version:** v1.1
+
 **Status:** ✅ Tested and approved
+
 **Last updated:** August 2026
 
 ---
