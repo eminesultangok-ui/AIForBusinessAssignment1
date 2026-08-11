@@ -1,9 +1,14 @@
 # P03 · Voluntary event notification
 
 **Section:** 01 — Event Classification & Notification
+
 **Workflow step:** Step 3 of 3
+
+
 **Current version:** v1.1
+
 **Status:** ✅ Tested and approved
+
 **Last updated:** August 2026
 
 ---
