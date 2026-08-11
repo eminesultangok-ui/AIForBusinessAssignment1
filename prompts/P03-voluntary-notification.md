@@ -9,7 +9,7 @@
 
 **Status:** ✅ Tested and approved
 
-**Last updated:** August 2026
+**Last updated:** 11 August 2026
 
 ---
 
@@ -117,9 +117,17 @@ Analysts repeatedly draft the same instruction-request structure for every volun
 ### v1.0 — Initial draft
 
 **Date:** 11 August 2026
+
+
 **Prompt:** `Write a client notification requesting instruction for a voluntary corporate action.`
+
+
 **Output:** Well-formatted, correctly excluded analyst name and recommendation language. But the notification never explained what the client was actually being asked to decide (no event terms provided), and ended with a vague referral ("contact your account manager") instead of a specific instruction request.
+
+
 **Observed effect:** Output looked complete on the surface but didn't fulfil P03's actual role in the workflow — a Voluntary notification is supposed to request an instruction, not just inform. The client would not know what decision to make or how to respond.
+
+
 **Lesson learned:** A well-formatted, constraint-compliant output can still fail its core purpose if the prompt doesn't require the two things the task actually needs: the decision context (event terms) and an explicit call to action (how to submit an instruction).
 
 ---
@@ -127,9 +135,17 @@ Analysts repeatedly draft the same instruction-request structure for every volun
 ### v1.1 — Added event terms field and explicit call to action ✅ Current
 
 **Date:** 11 August 2026
+
+
 **Change:** Added "Event Terms" field for decision context; required an explicit call to action asking the client to submit an instruction and how.
+
+
 **Output:** Notification clearly stated the subscription ratio (1:3) and price ($15.00), matched input data exactly, and ended with a specific instruction request instead of a vague referral.
+
+
 **Observed effect:** Both v1.0 gaps closed — client now knows what's being offered and how to respond.
+
+
 **Lesson learned:** Adding decision context and a clear call to action turned a well-formatted but functionally incomplete notification into one that actually does its job.
 
 ---
