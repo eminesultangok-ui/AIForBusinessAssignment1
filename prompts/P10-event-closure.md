@@ -34,8 +34,7 @@ Do not add an analyst name — sign the document only as "Corporate
 Actions Operations." Do not invent missing data, and do not add
 fields outside this list.
 
-Event Closure Data:
-[Event Closure Data]
+
 ```
 
 **Placeholders to fill:**
@@ -103,9 +102,17 @@ Closure records are currently inconsistent, and sometimes not kept at all — th
 ### v1.0 — Initial draft ✅ Current
 
 **Date:** 11 August 2026
+
+
 **Prompt:** `Summarise this closed corporate action event for internal records: total clients notified, instructions received vs lapsed, any exceptions requiring follow-up. Max 150 words. Do not invent missing data, and do not add fields outside this list.`
+
+
 **Output:** Accurate closure summary — all figures (45 notified, 38 participated, 5 lapsed, 2 exceptions) reproduced exactly from input, with the exception reason correctly stated.
+
+
 **Observed effect:** Produces a clean, audit-ready closure record with no invented or altered figures — matches the discipline enforced in P01 (do not invent missing data) applied here to a summary/reporting context.
+
+
 **Lesson learned:** Constraints proven effective in earlier prompts (explicit field list, no invented data) transferred cleanly to a new context (event closure) without needing further iteration — confirming these are now reliable, reusable prompt-design patterns across the library.
 
 ---
