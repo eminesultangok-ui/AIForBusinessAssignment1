@@ -36,6 +36,6 @@ P04 - Deadline reminder
 
 | File | Prompt | Status |
 |------|--------|--------|
-| [P04-deadline-reminder.md](../../prompts/P04-deadline-reminder.md) | Deadline reminder | 🔄 In progress |
-| [P05-instruction-confirmation.md](../../prompts/P05-instruction-confirmation.md) | Instruction confirmation | 🔄 In progress |
-| [P07-missed-deadline.md](../../prompts/P07-missed-deadline.md) | Missed-deadline follow-up | 🔄 In progress |
+| [P04-deadline-reminder.md](../../prompts/P04-deadline-reminder.md) | Deadline reminder | ✅ Tested — v1.1 |
+| [P05-instruction-confirmation.md](../../prompts/P05-instruction-confirmation.md) | Instruction confirmation | ✅ Tested — v1.1 |
+| [P07-missed-deadline.md](../../prompts/P07-missed-deadline.md) | Missed-deadline follow-up | ✅ Tested — v1.0 |
