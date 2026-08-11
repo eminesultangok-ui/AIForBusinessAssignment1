@@ -238,5 +238,5 @@ Officers manually cross-check feed data against a classification checklist for e
 ## 🔗 Related Prompts
 
 - **Next in chain (Mandatory):** [P02 — Mandatory event notification](P02-mandatory-notification.md)
-- **Next in chain (Voluntary):** P03 — Voluntary event notification
+- **Next in chain (Voluntary):** [P03 — Voluntary event notification](P03-voluntary-notification.md)
 - **Parent section:** [01-event-classification-and-notification/README.md](../workflows/01-event-classification-and-notification/README.md)
