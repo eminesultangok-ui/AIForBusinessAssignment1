@@ -38,14 +38,6 @@ only: "Missing required data: [field name]."
 Do not add an analyst name — sign the notification only as
 "Corporate Actions Team."
 
-Event feed entry:
-Sender Name: [Sender Name]
-Security Name: [Security Name]
-ISIN: [ISIN]
-Event Name: [Event Name]
-Instruction Wording: [Instruction Wording]
-Reference Number: [Reference number]
-Timeline: [Timeline]
 ```
 
 **Placeholders to fill:**
@@ -120,9 +112,17 @@ Clients frequently call to confirm their instruction was received, generating av
 ### v1.0 — Initial draft
 
 **Date:** 11 August 2026
+
+
 **Prompt:** `This is a confirmation email... Clearly confirm: (1) instruction received, (2) reference number, (3) processed ahead of stated timeline — no further action required.`
+
+
 **Output:** Accurate confirmation — instruction wording reproduced exactly, reference number included, timeline correctly used. But "processed ahead of the timeline" was abstract, not telling the client concretely what happens to their account.
+
+
 **Observed effect:** Confirmation was correct but not maximally reassuring — lacked concrete detail about automatic account reflection.
+
+
 **Lesson learned:** Confirming an instruction was "processed" is accurate but vague — clients likely want explicit confirmation that their account updates automatically, with no further steps needed.
 
 ---
@@ -130,9 +130,17 @@ Clients frequently call to confirm their instruction was received, generating av
 ### v1.1 — Added concrete "automatically reflected in account" detail ✅ Current
 
 **Date:** 11 August 2026
+
+
 **Change:** Added explicit instruction to confirm the instruction will be "automatically reflected in the client's account" ahead of the timeline, not just "processed."
+
+
 **Output:** Confirmation now states instruction will be "processed and automatically reflected in your account ahead of 20.8.2026" — more concrete and reassuring than v1.0.
+
+
 **Observed effect:** Client now has a clear, tangible picture of what happens next, rather than an abstract "processed" statement.
+
+
 **Lesson learned:** Small wording additions ("processed" → "automatically reflected in your account") can meaningfully improve client reassurance without changing the prompt's structure or length.
 
 ---
