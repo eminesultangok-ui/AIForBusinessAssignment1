@@ -38,8 +38,7 @@ required data: daily processing log."
 Do not add an analyst name — sign the report only as "Corporate
 Actions Operations."
 
-Daily Processing Log:
-[Daily Processing Log]
+
 ```
 
 **Placeholders to fill:**
@@ -109,9 +108,17 @@ The ops lead manually compiles this status overview from multiple systems each m
 ### v1.0 — Initial draft ✅ Current
 
 **Date:** 11 August 2026
+
+
 **Prompt:** `Summarise today's processed corporate action events for internal management reporting. Extract each event and present as a table: Company, Event Type, Status, Client Count Affected. Flag any Exception rows for escalation.`
+
+
 **Output:** Correct 4-column table with all 5 events accurately extracted; added a relevant "Exception Reason" column and an escalation note for the flagged event.
+
+
 **Observed effect:** Ops lead gets an immediately scannable table plus a clear escalation flag — no manual sorting or interpretation needed.
+
+
 **Lesson learned:** Separating P08's internal-reporting role from P07's client-facing role (which had been mistakenly mixed into the first draft) was essential — once the prompt focused solely on tabular extraction and escalation flagging, the model produced a clean, accurate result on the first well-scoped attempt.
 
 ---
