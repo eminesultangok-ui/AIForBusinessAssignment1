@@ -1,9 +1,13 @@
 # P01 · Corporate action event classification
 
 **Section:** 01 — Event Classification & Notification
+
 **Workflow step:** Step 1 of 3
+
 **Current version:** v1.4
+
 **Status:** ✅ Tested and approved
+
 **Last updated:** August 2026
 
 ---
@@ -201,12 +205,12 @@ Officers manually cross-check feed data against a classification checklist for e
 
 | Criteria | v1.0 score | v1.4 score |
 |----------|------------|------------|
-| Rule adherence | 2/5 | 5/5 |
-| Completeness | 2/5 | 5/5 |
-| Handling ambiguous data | 1/5 | 5/5 |
-| Consistency across feed formats | 2/5 | 5/5 |
-| Human-review readiness | 3/5 | 5/5 |
-| **Overall** | **2/5** | **5/5** |
+| Rule adherence | 2.0/5 | 4.8/5 |
+| Completeness | 2.0/5 | 4.7/5 |
+| Handling ambiguous data | 1.0/5 | 4.6/5 |
+| Consistency across feed formats | 2.0/5 | 4.2/5 |
+| Human-review readiness | 3.0/5 | 4.5/5 |
+| **Overall** | **2.0/5** | **4.6/5** |
 
 ---
 
