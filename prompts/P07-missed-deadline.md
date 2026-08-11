@@ -43,14 +43,7 @@ only: "Missing required data: [field name]."
 Do not add an analyst name — sign the notification only as
 "Corporate Actions Team."
 
-Event feed entry:
-Sender Name: [Sender Name]
-Security Name: [Security Name]
-ISIN: [ISIN]
-Holding Shares Amount: [Holding Shares Amount]
-Event Name: [Event Name]
-Deadline Date: [Deadline Date]
-Default Outcome: [Default Outcome]
+
 ```
 
 **Placeholders to fill:**
@@ -140,9 +133,17 @@ These emails are sensitive (the client may be upset) and currently vary widely i
 ### v1.0 — Initial draft ✅ Current
 
 **Date:** 11 August 2026
+
+
 **Prompt:** `This is a notification informing a client that the deadline for a voluntary corporate action has passed... Draft a clear, non-judgemental message explaining: (1) the deadline has passed, (2) the default outcome, (3) contact via relationship manager.`
+
+
 **Output:** Clear, accurate notification — deadline, event name, holding amount, and default outcome all correctly stated; tone was firm but non-judgemental as required.
+
+
 **Observed effect:** Client receives an unambiguous explanation of what happened and what to do next, with no vague or uncertain language about the outcome.
+
+
 **Lesson learned:** Making "default outcome" an explicit required field (rather than leaving the model to infer or generalise it) was essential — this is the same lesson learned across P01 and P04: fields the model must state precisely should never be left implicit.
 
 ---
