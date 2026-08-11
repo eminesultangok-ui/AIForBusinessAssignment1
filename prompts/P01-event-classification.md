@@ -153,9 +153,13 @@ Officers manually cross-check feed data against a classification checklist for e
 ### v1.0 — Initial draft
 
 **Date:** 10.08.2026
+
 **Prompt:** Classify this event as Mandatory or Voluntary, then list missing fields for a client notification. Do not invent missing data.
+
 **Output:** Classification correct (Mandatory), no invented dates — but the missing-fields checklist expanded to 7 items, including categories outside the intended scope (tax implications, contact information, holdings impact).
+
 **Observed effect:** Output was accurate but unpredictable in scope — different runs could flag different "extra" categories depending on the model's own judgement of what a notification "needs."
+
 **Lesson learned:** v1.0 revealed that the model's definition of "missing fields" was broader than P01's intended scope within the workflow — it reasoned about notification completeness in general, not specifically about the event-variable data P02/P03 require.
 
 ---
@@ -163,9 +167,13 @@ Officers manually cross-check feed data against a classification checklist for e
 ### v1.1 — Constrained checklist to a fixed field whitelist
 
 **Date:** 10.08.2026
+
 **Change:** Replaced the open-ended "provide a checklist of missing fields" instruction with a fixed list of four required fields (record date, payment/settlement date, exchange ratio or consideration amount, instruction deadline) and an explicit instruction not to introduce fields outside this list.
+
 **Output:** Classification correct (Mandatory). All four whitelisted fields addressed individually — record date and payment date both flagged as missing, exchange ratio correctly identified as present, and the instruction deadline field correctly marked "Not applicable" rather than "missing," since the model recognised it only applies to Voluntary events.
+
 **Observed effect:** Output scope became fully predictable — exactly 4 fields addressed, zero categories outside the whitelist. However, the model silently disregarded the single date provided in the feed ("KEY DATES: 15.08.2026") rather than flagging it as ambiguous — it did not attempt to map this date to record date or payment date, nor did it note that a date was present but its type was unclear. Both fields were marked "missing" as if no date data existed at all.
+
 **Lesson learned:** A closed field list controls scope effectively but does not by itself teach the model to reconcile ambiguous input against that list. A stronger v1.2 would explicitly instruct the model to flag ambiguous-but-present data (e.g. "if a date is provided but its type is unclear, state this explicitly rather than marking the field as missing") rather than silently treating it as absent.
 
 ---
@@ -173,9 +181,13 @@ Officers manually cross-check feed data against a classification checklist for e
 ### v1.2 — Added explicit "Ambiguous" status for unmapped data
 
 **Date:** 10.08.2026
+
 **Change:** Extended field status from a binary Present/Missing to three states (Present, Missing, Ambiguous), and added an explicit instruction: if a date is provided but its specific field type cannot be determined, mark it "Ambiguous" and state the date rather than marking the field "Missing."
+
 **Output:** Tested against a deliberately ambiguous feed (`KEY DATES: 15.08.2026`, a single unlabelled date field). Record date and payment date were both correctly returned as "Ambiguous (15.08.2026 provided, but it is unclear if this is the record date or another key date)." Exchange ratio and instruction deadline remained correctly classified, unaffected by the change.
+
 **Observed effect:** The model no longer discards ambiguous-but-present data. Officers reviewing the output can now see that a date exists in the feed and needs clarification, rather than being told — incorrectly — that no date data was provided at all. However, this test also revealed a limitation in the test feed design itself: real custodian feeds always provide record date and payment date as separately labelled fields, so a single combined "KEY DATES" field does not reflect realistic input. This meant v1.2's "Ambiguous" behaviour, while correct for the input given, had not yet been validated against realistically structured data.
+
 **Lesson learned:** Explicitly naming a third output state (Ambiguous) alongside Present/Missing closed a real gap — binary classification schemes can silently misrepresent genuinely uncertain data as confidently absent. At the same time, this iteration surfaced a separate issue: the prompt did not yet distinguish between "data is genuinely ambiguous" and "data is separately labelled and should be read directly." This motivated v1.3, which adds explicit handling for both labelled and combined field formats.
 
 ---
@@ -183,9 +195,13 @@ Officers manually cross-check feed data against a classification checklist for e
 ### v1.3 — Added support for both labelled and combined feed formats
 
 **Date:** 10.08.2026
+
 **Change:** Added explicit handling for two different feed formats: separately labelled fields (e.g. "RECORD DATE:", "PAYMENT DATE:") should be read directly and marked "Present," while data combined under a single generic label (e.g. "KEY DATES:") should be marked "Ambiguous." Previously, the prompt only handled the ambiguous case.
+
 **Output:** Tested against a realistically structured feed with separately labelled RECORD DATE and PAYMENT DATE fields. Record date, payment date, and exchange ratio were all correctly marked "Present" with their values, confirming the prompt now handles well-formed feeds correctly, not just ambiguous ones. However, the Instruction deadline field — which should logically be "Not Applicable" for a Mandatory event — was returned as "Missing" instead, despite the model having correctly inferred "Not Applicable" for the same logical situation in earlier ad hoc tests under v1.1 and v1.2.
+
 **Observed effect:** The core Present/Ambiguous logic worked reliably once realistic data was used. However, this test surfaced a separate, previously undetected inconsistency: the model's handling of the Instruction deadline field for Mandatory events was not governed by any explicit rule in the prompt — it had only ever appeared correct "by inference," and that inference did not hold consistently across test runs.
+
 **Lesson learned:** Correct behaviour observed in earlier tests is not proof that a prompt enforces that behaviour — it may simply reflect the model's inference on that particular run. Any field whose correct value depends on another field (here, Instruction deadline depending on the Mandatory/Voluntary classification) needs an explicit conditional rule in the prompt, not an assumption that the model will infer it consistently every time.
 
 ---
@@ -193,9 +209,13 @@ Officers manually cross-check feed data against a classification checklist for e
 ### v1.4 — Explicit rule for "Not Applicable" status ✅ Current
 
 **Date:** 10.08.2026
+
 **Change:** Added a fourth status option (Not Applicable) alongside Present/Missing/Ambiguous, with an explicit conditional rule: if the event is classified as Mandatory, the Instruction deadline field must always be marked "Not Applicable," never "Missing," regardless of what appears in the feed.
+
 **Output:** Tested against the same well-formed feed as v1.3 (separately labelled record date, payment date, exchange terms). Record date, payment date, and exchange ratio were all correctly marked "Present" with their values. Instruction deadline was correctly and consistently marked "Not Applicable."
+
 **Observed effect:** v1.3 had shown that, without an explicit rule, the model's handling of the Instruction deadline field for Mandatory events was inconsistent — it had correctly inferred "Not Applicable" in earlier ad hoc tests but returned "Missing" for the same logical situation in the v1.3 test run. Adding an explicit conditional rule removed this inconsistency: the field is now determined directly by the event classification, not left to the model's inference.
+
 **Lesson learned:** Behaviour the model produces correctly "by inference" in some test runs is not reliable evidence that the prompt itself enforces that behaviour. Where a field's applicability depends on another field's value (here, event classification), that dependency should be stated as an explicit rule rather than left for the model to infer each time — inference-based correctness can silently regress between runs.
 
 ---
