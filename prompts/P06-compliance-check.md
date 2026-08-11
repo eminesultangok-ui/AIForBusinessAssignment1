@@ -1,9 +1,13 @@
 # P06 · Compliance check
 
 **Section:** 03 — Compliance and Reporting
+
 **Workflow step:** Step 1 of 4
+
 **Current version:** v1.0
+
 **Status:** ✅ Tested and approved
+
 **Last updated:** August 2026
 
 ---
