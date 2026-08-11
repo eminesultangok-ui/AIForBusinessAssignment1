@@ -153,6 +153,7 @@ Officers manually cross-check feed data against a classification checklist for e
 ### v1.0 — Initial draft
 
 **Date:** 11.08.2026
+**Prompt:** Classify this event as Mandatory or Voluntary, then list missing fields for a client notification. Do not invent missing data.
 **Output:** Classification correct (Mandatory), no invented dates — but the missing-fields checklist expanded to 7 items, including categories outside the intended scope (tax implications, contact information, holdings impact).
 **Observed effect:** Output was accurate but unpredictable in scope — different runs could flag different "extra" categories depending on the model's own judgement of what a notification "needs."
 **Lesson learned:** v1.0 revealed that the model's definition of "missing fields" was broader than P01's intended scope within the workflow — it reasoned about notification completeness in general, not specifically about the event-variable data P02/P03 require.
