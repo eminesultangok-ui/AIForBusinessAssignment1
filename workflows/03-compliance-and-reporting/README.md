@@ -37,7 +37,7 @@ P08 - Daily processing digest -- runs every morning, independent of any single e
 
 | File | Prompt | Status |
 |------|--------|--------|
-| [P06-compliance-check.md](../../prompts/P06-compliance-check.md) | Pre-send compliance screening | 🔄 In progress |
-| [P08-daily-digest.md](../../prompts/P08-daily-digest.md) | Daily processing digest | 🔄 In progress |
-| [P09-complex-event-faq.md](../../prompts/P09-complex-event-faq.md) | Complex event FAQ prep | 🔄 In progress |
-| [P10-event-closure.md](../../prompts/P10-event-closure.md) | Event closure / reconciliation | 🔄 In progress |
+| [P06-compliance-check.md](../../prompts/P06-compliance-check.md) | Pre-send compliance screening | ✅ Tested — v1.0 |
+| [P08-daily-digest.md](../../prompts/P08-daily-digest.md) | Daily processing digest | ✅ Tested — v1.0 |
+| [P09-complex-event-faq.md](../../prompts/P09-complex-event-faq.md) | Complex event FAQ prep | ✅ Tested — v1.1 |
+| [P10-event-closure.md](../../prompts/P10-event-closure.md) | Event closure / reconciliation | ✅ Tested — v1.0 |
